@@ -16,7 +16,11 @@ class ServerRenderingService {
       const branch = matchRoutes(routers, this.matchUrl);
 
       const promises = branch.map((route) => {
-         return route.route.component.fetchData(store);
+         if(route.route.component.fetchData) {
+            return route.route.component.fetchData(store);
+         }
+
+         return null;
       });
 
       if(promises.length > 0) {

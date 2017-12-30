@@ -1,9 +1,21 @@
 import React, {PureComponent} from 'react';
+import cx from 'classnames';
+import './image.scss';
 
 class Image extends PureComponent {
    render() {
-      return <img {...this.props} />;
+      const {className, ...restProps} = this.props;
+      const props = {
+         className: cx('img', className),
+         ...restProps
+      };
+
+      return <img {...props} />;
    }
 }
+
+Image.defaultProps = {
+   className: ''
+};
 
 export default Image;

@@ -1,15 +1,14 @@
-import About from 'common/About';
-import Home from 'common/Home';
+import {Play, MusicList} from 'common/elements';
 
 const routes = [
    {
-      component: Home,
-      path: '/home',
+      component: Play,
+      path: '/play',
       exact: true
    },
    {
-      component: About,
-      path: '/about',
+      component: MusicList,
+      path: '/musiclist',
       exact: true
    }
 ];
