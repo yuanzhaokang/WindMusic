@@ -11,7 +11,8 @@ server.use(bodyParser.urlencoded({extended: false}));
 server.use(cookieParser());
 
 server.use(express.static(path.resolve('./dist')));
-server.use(express.static(path.resolve('./static')));
+server.use('/static', express.static(path.resolve('./static')));
+server.use('/music', express.static(path.resolve('./music/')));
 
 server.use('/', ServerRenderingRouter);
 

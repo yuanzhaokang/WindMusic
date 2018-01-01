@@ -6,6 +6,7 @@ import {renderToString} from 'react-dom/server';
 import {StaticRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import React from 'react';
+import 'common/style/app.scss';
 
 class ServerRenderingService {
    constructor(matchUrl) {
@@ -30,9 +31,11 @@ class ServerRenderingService {
                   let context = {};
                   let content = renderToString(
                      <StaticRouter location={this.matchUrl} context={context}>
+                        <div className='app'>
                         <Provider store={store}>
                            {renderRoutes(routers)}
                         </Provider>
+                        </div>
                      </StaticRouter >
                   );
 

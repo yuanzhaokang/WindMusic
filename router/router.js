@@ -1,4 +1,5 @@
 import {Play, MusicList} from 'common/elements';
+import 'common/style/default.scss';
 
 const routes = [
    {
