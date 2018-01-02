@@ -2,7 +2,8 @@ import * as Constants from 'common/action/constants';
 import immutable from 'immutable';
 
 let state = immutable.fromJS({
-   isPlay: false
+   isPlay: false,
+   musicName: '/music/一封家书.mp3'
 });
 
 if(__isClient) {

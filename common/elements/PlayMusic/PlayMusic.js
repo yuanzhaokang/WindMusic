@@ -25,14 +25,14 @@ class PlayMusic extends PureComponent {
    }
 
    render() {
-      const {isPlay} = this.props;
+      const {isPlay, musicName} = this.props;
 
       return (
          <div className='play-music'>
             <Bar />
             <div className='play-music-control-container'>
                <div>
-                  <audio ref={(ref) => {this.control = ref;}} src='/music/一封家书.mp3' ></audio>
+                  <audio ref={(ref) => {this.control = ref;}} src={musicName} ></audio>
                   <Switch direction='pre' />
                   <Play onClick={this._playHandler} isPlay={isPlay} />
                   <Switch direction='next' />
@@ -50,9 +50,9 @@ class PlayMusic extends PureComponent {
 }
 
 const mapStateToProps = (state, ownProps) => {
-   console.log(state);
    return {
-      isPlay: state.get('isPlay')
+      isPlay: state.get('isPlay'),
+      musicName: state.get('musicName')
    };
 }
 
