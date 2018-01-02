@@ -50,8 +50,9 @@ class PlayMusic extends PureComponent {
 }
 
 const mapStateToProps = (state, ownProps) => {
+   console.log(state);
    return {
-      isPlay: state.isPlay
+      isPlay: state.get('isPlay')
    };
 }
 

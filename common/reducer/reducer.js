@@ -1,17 +1,18 @@
 import * as Constants from 'common/action/constants';
+import immutable from 'immutable';
 
-let state = {
+let state = immutable.fromJS({
    isPlay: false
-};
+});
 
 if(__isClient) {
-   state = Object.assign({}, window.serverState);
+   state = immutable.fromJS(window.serverState);
 }
 
 function reducer(initState = state, action) {
    switch(action.type) {
       case Constants.PLAY:
-         return Object.assign({}, initState, {isPlay: action.value});
+         return initState.set('isPlay', !initState.get('isPlay'));
       default:
          return initState;
    }
