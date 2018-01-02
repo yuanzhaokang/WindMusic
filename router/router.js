@@ -1,10 +1,10 @@
-import {Play, MusicList} from 'common/elements';
+import {PlayMusic, MusicList} from 'common/elements';
 import 'common/style/default.scss';
 
 const routes = [
    {
-      component: Play,
-      path: '/play',
+      component: PlayMusic,
+      path: '/playmusic',
       exact: true
    },
    {

@@ -1,4 +1,6 @@
+import cx from 'classnames';
 import React, {PureComponent} from 'react';
+import './switch.scss';
 
 class Switch extends PureComponent {
    constructor() {
@@ -6,8 +8,15 @@ class Switch extends PureComponent {
    }
 
    render() {
+      let {direction, ...restProps} = this.props;
+      let klass = cx('switch', direction == 'pre' ? 'switch-pre' : 'switch-next');
+
       return (
-         <div></div>
+         <div className='switch-container'>
+            <div className={klass}></div>
+         </div>
       );
    }
 }
+
+export default Switch;

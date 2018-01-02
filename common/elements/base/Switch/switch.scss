@@ -1,0 +1,29 @@
+@import 'common/style/func.scss';
+
+$component: 'switch' !default;
+$width: 20;
+$pan: rem-calc(0.4142135623730951 * $width / 2);
+
+.#{$component + '-container'} {
+   display: inline-block;
+   width: rem-calc($width * 1.414);
+   height: rem-calc($width * 1.414);
+   vertical-align: bottom;
+}
+
+.#{$component} {
+   display: inline-block;
+   vertical-align: bottom;
+   width: rem-calc($width);
+   height: rem-calc($width);
+   border-left: rem-calc(2) rgb(73, 73, 73) solid;
+   border-top: rem-calc(2) rgb(73, 73, 73) solid;
+}
+
+.#{$component}-pre {
+   transform: translate($pan, $pan) rotate(-45deg);
+}
+
+.#{$component}-next {
+   transform: translate($pan, $pan) rotate(135deg);
+}

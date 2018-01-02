@@ -1,3 +1,7 @@
+// @function strip-unit($num) {
+//    @return $num / ($num * 0 + 1);
+// }
+
 @function rem-calc($px) {
    @return $px / 16 + rem;
 }

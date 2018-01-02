@@ -1,8 +1,7 @@
-import {HOME, ABOUT} from 'common/action/action';
+import * as Constants from 'common/action/constants';
 
 let state = {
-   home: 'home init',
-   about: 'about init'
+   isPlay: false
 };
 
 if(__isClient) {
@@ -11,11 +10,8 @@ if(__isClient) {
 
 function reducer(initState = state, action) {
    switch(action.type) {
-      case HOME:
-         return {home: action.home};
-      case ABOUT: {
-         return {about: action.about};
-      }
+      case Constants.PLAY:
+         return Object.assign({}, initState, {isPlay: action.value});
       default:
          return initState;
    }

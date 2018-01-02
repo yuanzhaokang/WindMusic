@@ -1,2 +1,2 @@
-export {default as Play} from './Play';
+export {default as PlayMusic} from './PlayMusic';
 export {default as MusicList} from './MusicList';
