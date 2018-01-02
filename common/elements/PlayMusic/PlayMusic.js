@@ -3,6 +3,7 @@ import {
    Play,
    Switch
 } from 'common/elements/base';
+import {Label} from 'common/components';
 import {play} from 'common/action/action';
 import React, {PureComponent} from 'react';
 import {autobind} from 'core-decorators';
