@@ -15,7 +15,8 @@ var config = {
          {test: /\.js$/, use: 'babel-loader'},
          {test: /\.jsx$/, use: 'babel-loader!jsx-loader'},
          {
-            test: /\.scss$/, use: ExtractTextPlugin.extract({
+            test: /\.scss$/,
+            use: ExtractTextPlugin.extract({
                fallback: "style-loader",
                use: ['css-loader', 'sass-loader']
             })

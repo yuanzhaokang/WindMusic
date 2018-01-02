@@ -14,13 +14,11 @@ var config = {
       rules: [
          {test: /\.js$/, use: 'babel-loader'},
          {test: /\.jsx$/, use: 'babel-loader!jsx-loader'},
-         {test: /\.css$/, use: 'null'},
+         // {test: /\.css$/, use: 'null'},
          {
             test: /\.scss$/,
             use: [
-               {
-                  loader: 'css-loader/locals',
-               }
+               'css-loader/locals', 'sass-loader'
             ]
          }
       ]
