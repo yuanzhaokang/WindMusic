@@ -15,4 +15,9 @@ $comoponent-name: 'play-music' !default;
       justify-content: center;
       align-items: center;
    }
+
+   .music-name {
+      width: 100%;
+      height: rem-calc(50);
+   }
 }

@@ -1,0 +1,12 @@
+@import 'common/style/func.scss';
+
+.progress {
+   height: rem-calc(5);
+   width: rem-calc(300);
+   background-color: grey;
+
+   .inner {
+      height: 100%;
+      background-color: yellowgreen;
+   }
+}

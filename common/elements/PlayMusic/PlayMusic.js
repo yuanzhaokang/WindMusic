@@ -1,7 +1,8 @@
 import {
    Bar,
    Play,
-   Switch
+   Switch,
+   Progress
 } from 'common/elements/base';
 import {Label} from 'common/components';
 import {play} from 'common/action/action';
@@ -32,7 +33,11 @@ class PlayMusic extends PureComponent {
             <Bar />
             <div className='play-music-control-container'>
                <div>
-                  <audio ref={(ref) => {this.control = ref;}} src={musicName} ></audio>
+                  <audio ref={(ref) => {this.control = ref;}} src={`\\music\\${musicName}`} ></audio>
+                  <div className='music-name'>
+                     <Label label={musicName} />
+                  </div>
+                  <Progress />
                   <Switch direction='pre' />
                   <Play onClick={this._playHandler} isPlay={isPlay} />
                   <Switch direction='next' />

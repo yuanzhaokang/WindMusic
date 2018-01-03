@@ -3,7 +3,7 @@ import immutable from 'immutable';
 
 let state = immutable.fromJS({
    isPlay: false,
-   musicName: '/music/一封家书.mp3'
+   musicName: '一封家书.mp3'
 });
 
 if(__isClient) {
