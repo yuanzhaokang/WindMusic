@@ -1,12 +1,23 @@
 @import 'common/style/func.scss';
 
-.progress {
-   height: rem-calc(5);
-   width: rem-calc(300);
-   background-color: grey;
+.progress-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   height: rem-calc(50);
 
-   .inner {
-      height: 100%;
-      background-color: yellowgreen;
+   .left-time {
+      font-size: rem-calc(12);
+   }
+
+   .progress {
+      height: rem-calc(5);
+      width: rem-calc(500);
+      background-color: rgb(225, 225, 225);
+
+      .inner {
+         height: 100%;
+         background-color: rgb(91, 166, 95);
+      }
    }
 }

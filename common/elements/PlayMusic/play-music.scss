@@ -16,8 +16,21 @@ $comoponent-name: 'play-music' !default;
       align-items: center;
    }
 
+   .musics {
+      font-size: rem-calc(14);
+      color: rgb(91, 166, 95);
+      cursor: pointer;
+   }
+
+   .musics:hover {
+     text-shadow: 0 0 0.2em rgb(91, 166, 95),
+                -0 -0 0.5em rgb(91, 166, 95);
+   }
+
    .music-name {
       width: 100%;
       height: rem-calc(50);
+      line-height: rem-calc(50);
+      font-size: rem-calc(25);
    }
 }

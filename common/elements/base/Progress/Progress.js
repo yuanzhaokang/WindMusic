@@ -7,10 +7,11 @@ class Progress extends PureComponent {
    }
 
    render() {
-      const {progress} = this.props;
+      const {progress, leftTime} = this.props;
 
       return (
-         <div>
+         <div className='progress-container'>
+            <div className={'left-time'}>{leftTime}</div>
             <div className='progress'>
                <div style={{width: progress}} className='inner'></div>
             </div>

@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import {ServerRenderingRouter} from 'server/router';
+import {ServerRenderingRouter, GetMusicListRouter} from 'server/router';
 
 const server = express();
 
@@ -15,6 +15,7 @@ server.use('/static', express.static(path.resolve('./static')));
 server.use('/music', express.static(path.resolve('./music/')));
 
 server.use('/', ServerRenderingRouter);
+server.use('/getmusiclist', GetMusicListRouter);
 
 server.use((req, res, next) => {
    let err = new Error('No found!');
