@@ -2,6 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import {setUTF8} from 'server/middleware/SetContentType';
 import {ServerRenderingRouter, GetMusicListRouter} from 'server/router';
 
 const server = express();
@@ -9,6 +10,13 @@ const server = express();
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: false}));
 server.use(cookieParser());
+
+server.use(setUTF8);
+// server.use(function(req, res, next) {
+//    res.header("Content-Type", "application/json; charset=utf-8");
+//    // res.header("Content-Type", "application/json; charset=utf-8");
+//    next();
+// })
 
 server.use(express.static(path.resolve('./dist')));
 server.use('/static', express.static(path.resolve('./static')));

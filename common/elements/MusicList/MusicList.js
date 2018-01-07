@@ -10,6 +10,8 @@ import {connect} from 'react-redux';
 
 class MusicList extends PureComponent {
    render() {
+      const {musiclist} = this.props;
+console.log(musiclist);
       return (
          <div className='music-list'>
             <Bar />

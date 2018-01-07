@@ -10,9 +10,8 @@ class GetMusicListController {
    create() {
       let getMusicListService = new GetMusicListService('./music');
       let lists = getMusicListService.get();
-      this.res.setHeader('content-type', 'text/javascript;chartset:utf-8');
-      // this.res.send(Buffer.from(`${JSON.stringify(lists)}`));
-      this.res.end(JSON.stringify(lists));
+      this.res.json(lists);
+      this.res.end();
    }
 }
 
