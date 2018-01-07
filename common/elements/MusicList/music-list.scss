@@ -1,0 +1,8 @@
+@import 'common/style/func.scss';
+
+.music-list {
+   margin-top: rem-calc(10);
+   overflow-y: auto;
+   max-height: rem-calc(300);
+   border: solid 1px rgba(120, 120, 120, 1);
+}

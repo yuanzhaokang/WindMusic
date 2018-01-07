@@ -7,11 +7,11 @@ const routes = [
       path: '/playmusic',
       exact: true
    },
-   {
-      component: MusicList,
-      path: '/musiclist',
-      exact: true
-   }
+   // {
+   //    component: MusicList,
+   //    path: '/musiclist',
+   //    exact: true
+   // }
 ];
 
 export default routes;

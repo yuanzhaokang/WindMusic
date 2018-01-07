@@ -5,7 +5,8 @@ import {
    Progress
 } from 'common/elements/base';
 import {Label} from 'common/components';
-import {play} from 'common/action/action';
+import {play, getMusicList} from 'common/action/action';
+import {MusicList} from 'common/elements';
 import React, {PureComponent} from 'react';
 import {connect} from 'react-redux';
 import './play-music.scss';
@@ -40,9 +41,6 @@ class PlayMusic extends PureComponent {
             <div className='play-music-control-container'>
                <div>
                   <audio ref={this._setControl} src={`\\music\\${musicName}`} ></audio>
-                  <a href="/musiclist">
-                     <Label className='musics' label={"< 音乐集"} />
-                  </a>
                   <div className='music-name'>
                      <Label label={musicName} />
                   </div>
@@ -50,6 +48,8 @@ class PlayMusic extends PureComponent {
                   <Switch direction='pre' />
                   <Play onClick={this._playHandler} isPlay={isPlay} />
                   <Switch direction='next' />
+                  <Label className='musics' label={"音乐集"} />
+                  <MusicList />
                </div>
             </div>
          </div>
@@ -81,6 +81,25 @@ class PlayMusic extends PureComponent {
       }
 
       requestAnimationFrame(this._progress);
+   }
+
+   static fetchData(store) {
+      return new Promise((resolve, reject) => {
+         fetch('http://localhost:3000/getmusiclist')
+            .then(res => {
+               res.json()
+                  .then((json) => {
+                     store.dispatch(getMusicList(json));
+                     resolve("success");
+                  })
+                  .catch(e => {
+                     reject(e);
+                  });
+            })
+            .catch(e => {
+               reject(e);
+            })
+      });
    }
 }
 

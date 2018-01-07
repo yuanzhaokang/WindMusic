@@ -32,9 +32,9 @@ class ServerRenderingService {
                   let content = renderToString(
                      <StaticRouter location={this.matchUrl} context={context}>
                         <div className='app'>
-                        <Provider store={store}>
-                           {renderRoutes(routers)}
-                        </Provider>
+                           <Provider store={store}>
+                              {renderRoutes(routers)}
+                           </Provider>
                         </div>
                      </StaticRouter >
                   );
